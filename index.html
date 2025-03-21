@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="./vite.svg" /> -->
+    <link rel="icon" href="./favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>支付中心</title>
+    <script>
+      // 只在支付宝环境中加载支付宝SDK
+      if (/AlipayClient/i.test(navigator.userAgent)) {
+        const script = document.createElement('script');
+        script.src = 'https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.inc.min.js';
+        document.head.appendChild(script);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
